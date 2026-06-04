@@ -1,0 +1,165 @@
+{
+    "endpoint": "/api/v1/sample",
+    "ApiEndpoint": [
+      {
+        "RequestBody": {
+          "schema": [
+            {
+              "type": "number",
+              "field": "userId"
+            },
+            {
+              "type": "number",
+              "field": "id"
+            },
+            {
+              "type": "string",
+              "field": "title"
+            }
+          ]
+        },
+        "QueryParams": null,
+        "definition": [
+          {
+            "collection": "sample",
+            "action": "find"
+          }
+        ],
+        "endpoint": "/",
+        "method": "GET"
+      },
+      {
+        "RequestBody": {
+          "schema": [
+            {
+              "type": "number",
+              "field": "userId"
+            },
+            {
+              "type": "number",
+              "field": "id"
+            },
+            {
+              "type": "string",
+              "field": "title"
+            }
+          ]
+        },
+        "QueryParams": null,
+        "definition": [
+          {
+            "collection": "sample",
+            "action": "findOne",
+            "filterBy": [
+              {
+                "type": "string",
+                "field": "id",
+                "required": true
+              }
+            ]
+          }
+        ],
+        "endpoint": "/{id}",
+        "method": "GET"
+      },
+      {
+        "RequestBody": {
+          "schema": [
+            {
+              "type": "number",
+              "field": "userId",
+              "required": true
+            },
+            {
+              "type": "string",
+              "field": "id"
+            },
+            {
+              "type": "string",
+              "field": "title",
+              "required": true
+            }
+          ]
+        },
+        "QueryParams": null,
+        "definition": [
+          {
+            "collection": "sample",
+            "action": "insertOne"
+          }
+        ],
+        "endpoint": "/",
+        "method": "POST"
+      },
+      {
+        "RequestBody": {
+          "schema": [
+            {
+              "type": "number",
+              "field": "userId",
+              "required": true
+            },
+            {
+              "type": "string",
+              "field": "id"
+            },
+            {
+              "type": "string",
+              "field": "title",
+              "required": true
+            }
+          ]
+        },
+        "QueryParams": null,
+        "definition": [
+          {
+            "collection": "sample",
+            "action": "updateOne",  
+            "filterBy": [
+              {
+                "type": "string",
+                "field": "id",
+                "required": true
+              }
+            ]
+          }
+        ],
+        "endpoint": "/{id}",
+        "method": "PUT"
+      },
+      {
+        "RequestBody": {
+          "schema": [
+            {
+              "type": "number",
+              "field": "userId"
+            },
+            {
+              "type": "string",
+              "field": "id"
+            },
+            {
+              "type": "string",
+              "field": "title"
+            }
+          ]
+        },
+        "QueryParams": null,
+        "definition": [
+          {
+            "collection": "sample",
+            "action": "updateOne",  
+            "filterBy": [
+              {
+                "type": "string",
+                "field": "id",
+                "required": true
+              }
+            ]
+          }
+        ],
+        "endpoint": "/{id}",
+        "method": "PATCH"
+      }
+    ]
+  }
