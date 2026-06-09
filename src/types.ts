@@ -47,6 +47,7 @@ export type ApiEndpoint = {
     } | null
 }
 export type ApiRouteDefinition = {
+    id: string;
     endpoint: string;
     ApiEndpoint: ApiEndpoint[]
 }
