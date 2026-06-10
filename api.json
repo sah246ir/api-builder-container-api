@@ -1,166 +1,126 @@
 {
-    "id":"1",
-    "endpoint": "/api/v1/sample",
-    "ApiEndpoint": [
-      {
-        "RequestBody": {
-          "schema": [
-            {
-              "type": "number",
-              "field": "userId"
-            },
-            {
-              "type": "number",
-              "field": "id"
-            },
-            {
-              "type": "string",
-              "field": "title"
-            }
-          ]
-        },
-        "QueryParams": null,
-        "definition": [
-          {
-            "collection": "sample",
-            "action": "find"
-          }
-        ],
-        "endpoint": "/",
-        "method": "GET"
-      },
-      {
-        "RequestBody": {
-          "schema": [
-            {
-              "type": "number",
-              "field": "userId"
-            },
-            {
-              "type": "number",
-              "field": "id"
-            },
+  "id": "1",
+  "endpoint": "/api/v1/recipes",
+  "ApiEndpoint": [
+    {
+      "RequestBody": null,
+      "QueryParams": null,
+      "definition": [
+        {
+          "action": "find",
+          "collection": "recipes"
+        }
+      ],
+      "endpoint": "/",
+      "method": "GET"
+    },
+    {
+      "RequestBody": null,
+      "QueryParams": null,
+      "definition": [
+        {
+          "action": "findOne",
+          "filterBy": [
             {
               "type": "string",
-              "field": "title"
+              "field": "id",
+              "required": true
             }
-          ]
-        },
-        "QueryParams": null,
-        "definition": [
+          ],
+          "collection": "recipes"
+        }
+      ],
+      "endpoint": "/{id}",
+      "method": "GET"
+    },
+    {
+      "RequestBody": {
+        "schema": [
           {
-            "collection": "sample",
-            "action": "findOne",
-            "filterBy": [
+            "type": "string",
+            "field": "name",
+            "required": true
+          },
+          {
+            "type": "string",
+            "field": "description"
+          },
+          {
+            "type": [
               {
                 "type": "string",
-                "field": "id",
+                "field": "quantity",
                 "required": true
-              }
-            ]
-          }
-        ],
-        "endpoint": "/{id}",
-        "method": "GET"
-      },
-      {
-        "RequestBody": {
-          "schema": [
-            {
-              "type": "number",
-              "field": "userId",
-              "required": true
-            },
-            {
-              "type": "string",
-              "field": "id"
-            },
-            {
-              "type": "string",
-              "field": "title",
-              "required": true
-            }
-          ]
-        },
-        "QueryParams": null,
-        "definition": [
-          {
-            "collection": "sample",
-            "action": "insertOne"
-          }
-        ],
-        "endpoint": "/",
-        "method": "POST"
-      },
-      {
-        "RequestBody": {
-          "schema": [
-            {
-              "type": "number",
-              "field": "userId",
-              "required": true
-            },
-            {
-              "type": "string",
-              "field": "id"
-            },
-            {
-              "type": "string",
-              "field": "title",
-              "required": true
-            }
-          ]
-        },
-        "QueryParams": null,
-        "definition": [
-          {
-            "collection": "sample",
-            "action": "updateOne",  
-            "filterBy": [
+              },
               {
                 "type": "string",
-                "field": "id",
+                "field": "name",
                 "required": true
               }
-            ]
+            ],
+            "array": true,
+            "field": "ingredients",
+            "required": true
           }
-        ],
-        "endpoint": "/{id}",
-        "method": "PUT"
+        ]
       },
-      {
-        "RequestBody": {
-          "schema": [
-            {
-              "type": "number",
-              "field": "userId"
-            },
-            {
-              "type": "string",
-              "field": "id"
-            },
-            {
-              "type": "string",
-              "field": "title"
-            }
-          ]
-        },
-        "QueryParams": null,
-        "definition": [
+      "QueryParams": null,
+      "definition": [
+        {
+          "action": "insertOne",
+          "collection": "recipes"
+        }
+      ],
+      "endpoint": "/",
+      "method": "POST"
+    },
+    {
+      "RequestBody": {
+        "schema": [
           {
-            "collection": "sample",
-            "action": "updateOne",  
-            "filterBy": [
+            "type": "string",
+            "field": "name",
+            "required": true
+          },
+          {
+            "type": "string",
+            "field": "description"
+          },
+          {
+            "type": [
               {
                 "type": "string",
-                "field": "id",
+                "field": "quantity",
+                "required": true
+              },
+              {
+                "type": "string",
+                "field": "name",
                 "required": true
               }
-            ]
+            ],
+            "array": true,
+            "field": "ingredients",
+            "required": true
           }
-        ],
-        "endpoint": "/{id}",
-        "method": "PATCH"
-      }
-    ]
-  }
+        ]
+      },
+      "QueryParams": null,
+      "definition": [
+        {
+          "action": "updateOne",
+          "filterBy": [
+            {
+              "type": "string",
+              "field": "id",
+              "required": true
+            }
+          ],
+          "collection": "recipes"
+        }
+      ],
+      "endpoint": "/",
+      "method": "PUT"
+    }
+  ]
+}
